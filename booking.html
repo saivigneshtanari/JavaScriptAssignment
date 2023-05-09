@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+    <div id="timer"></div>
+    <div class="movie-container">
+      <label>Select a movie</label>
+      <select id="movie">
+        <option value="180">PS-2 (₹180)</option>
+        <option value="250">Openheimer IMAX (₹250)</option>
+        <option value="180">Kushi (₹180)</option>
+        <option value="200">The Lion King (₹200)</option>
+      </select>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+
+      <div class="row">
+        <div class="seat">1A</div>
+        <div class="seat">2A</div>
+        <div class="seat">3A</div>
+        <div class="seat">4A</div>
+        <div class="seat">5A</div>
+        <div class="seat">6A</div>
+        <div class="seat">7A</div>
+        <div class="seat">8A</div>
+      </div>
+
+      <div class="row">
+        <div class="seat">1B</div>
+        <div class="seat">2B</div>
+        <div class="seat">3B</div>
+        <div class="seat">4B</div>
+        <div class="seat">5B</div>
+        <div class="seat">6B</div>
+        <div class="seat">7B</div>
+        <div class="seat">8B</div>
+      </div>
+
+      <div class="row">
+        <div class="seat">1C</div>
+        <div class="seat">2C</div>
+        <div class="seat">3C</div>
+        <div class="seat">4C</div>
+        <div class="seat">5C</div>
+        <div class="seat">6C</div>
+        <div class="seat">7C</div>
+        <div class="seat">8C</div>
+      </div>
+
+      <div class="row">
+        <div class="seat">1D</div>
+        <div class="seat">2D</div>
+        <div class="seat">3D</div>
+        <div class="seat">4D</div>
+        <div class="seat">5D</div>
+        <div class="seat">6D</div>
+        <div class="seat">7D</div>
+        <div class="seat">8D</div>
+      </div>
+
+      <div class="row">
+        <div class="seat">1E</div>
+        <div class="seat">2E</div>
+        <div class="seat">3E</div>
+        <div class="seat">4E</div>
+        <div class="seat">5E</div>
+        <div class="seat">6E</div>
+        <div class="seat">7E</div>
+        <div class="seat">8E</div>
+      </div>
+
+      <div class="row">
+        <div class="seat">1F</div>
+        <div class="seat">2F</div>
+        <div class="seat">3F</div>
+        <div class="seat">4F</div>
+        <div class="seat">5F</div>
+        <div class="seat">6F</div>
+        <div class="seat">7F</div>
+        <div class="seat">8F</div>
+      </div>
+    </div>
+
+    <p class="text">
+      You have selected <span id="count">0</span> seats for a price of ₹<span
+        id="price"
+        >0</span>
+    </p>
+    <br>
+    <a href="form.html">
+    <button id="purchase">Confirm Booking</button>
+    </a>
+    <br>
+    <button id="reset">Cancel/Reset</button>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>

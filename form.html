@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #081652;
+		}
+		form {
+			background-color: #ffffff;
+			border-radius: 5px;
+			padding: 50px;
+			width: 500px;
+			margin: 50px auto;
+			box-shadow: 0px 0px 10px 0px rgba(0,0,0,10);
+		}
+		input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="date"] {
+			display: block;
+			margin-bottom: 10px;
+			padding: 10px;
+			width: 100%;
+			border-radius: 3px;
+			border: none;
+			box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+		}
+		input[type="submit"], input[type="reset"] {
+			background-color: #4CAF50;
+			color: #ffffff;
+			padding: 10px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			margin-right: 10px;
+			font-size: 16px;
+		}
+		input[type="reset"] {
+			background-color: #f44336;
+		}
+		input[type="submit"]:hover, input[type="reset"]:hover {
+			background-color: #3e8e41;
+		}
+		input[type="submit"]:disabled, input[type="reset"]:disabled {
+			background-color: #ccc;
+			color: #999;
+			cursor: not-allowed;
+		}
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+			color: #333;
+		}
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+  <label for="regID">Registration ID *</label>
+  <input type="text" id="regID" name="regID" placeholder="Enter your registration ID" required>
+
+  <label for="username">Username *</label>
+  <input type="text" id="username" name="username" placeholder="Enter your username" required pattern="[A-Za-z]+" title="Username should not contain digits">
+
+  <label for="password">Password *</label>
+  <input type="password" id="password" name="password" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?=.*\w).{8,}" title="Password should have at least one small case letter, an uppercase letter, a digit, and a special character with a minimum password length of 8.">
+
+  <label for="email">Email *</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+  <label for="mobile">Mobile number *</label>
+  <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required pattern="[0-9]{10}" title="Mobile number should be exactly 10 digits and not entered like (0000000000)">
+  
+  <label for="Card">Card Number *</label>
+  <input type="text" id="card" name="card" placeholder="Enter your card number for payment" required>
+
+  <label for="dob">DOB *</label>
+  <input type="date" id="dob" name="dob" placeholder="Enter your date of birth" required>
+
+  <div class="buttons">
+	<br>
+    <button type="submit">Submit</button>
+    <button type="reset">Cancel</button>
+  </div>
+</form>
+</body>
+</html>
+	

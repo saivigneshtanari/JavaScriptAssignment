@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Now Showing Movies</title>
+	<style>
+		label {
+  		    font-weight: bold;
+	    }
+
+    	input[type="text"], input[type="checkbox"] {
+    		margin: 5px;
+		}
+
+		ul {
+
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			padding: 10px;
+			border: 1px solid black;
+			display: block;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #ffffff;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: 30px;
+		}
+		.movie {
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			margin: 20px;
+			width: 300px;
+			border-radius: 10px;
+			overflow: hidden;
+			position: relative;
+		}
+		.movie img {
+			width: 100%;
+			height: 400px;
+			object-fit: cover;
+			object-position: center;
+		}
+		.movie .details {
+			padding: 20px;
+		}
+		.movie h2 {
+			margin-top: 0;
+		}
+		.movie .showtime {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.movie .price {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.movie .buy {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 20px;
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			font-size: 18px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<br>
+	<center>
+	<label for="search">   Search movies by title:</label>
+	<input type="text" id="search" onkeyup="searchMovies()">
+	<br><br>
+	<label>   Filter movies by genre:</label>
+	<div>
+		<input type="checkbox" id="action" onchange="filterMovies()">
+		<label for="action">Action</label>
+	</div>
+	<div>
+		<input type="checkbox" id="Drama" onchange="filterMovies()">
+		<label for="drama">Drama</label>
+	</div>
+   </center>
+	
+	<h1>Now Showing Movie</h1>
+	<div class="container">
+		<div class="movie">
+			<img src="OP.jpg">
+			<div class="details">
+				<h2>Oppenheimer</h2>
+				<div class="showtime">
+					<p>Showtime:</p>
+					<p>8.30 AM, 12:00 PM</p>
+				</div>
+				<div class="price">
+					<p>Price:</p>
+					<p>Rs 250</p>
+				</div>
+		</div>
+	</div>
+
+    <div class="container">
+		<div class="movie">
+			<img src="Lion.jpg">
+			<div class="details">
+				<h2>The Lion King</h2>
+				<div class="showtime">
+					<p>Showtime:</p>
+					<p>8.30 AM, 12:00 PM</p>
+				</div>
+				<div class="price">
+					<p>Price:</p>
+					<p>Rs 200</p>
+				</div>
+		</div>
+	</div>
+
+    <div class="container">
+		<div class="movie">
+			<img src="PS2.jpg">
+			<div class="details">
+				<h2>Ponniyin Selvan 2</h2>
+				<div class="showtime">
+					<p>Showtime:</p>
+					<p>8.30 AM, 12:00 PM</p>
+				</div>
+				<div class="price">
+					<p>Price:</p>
+					<p>Rs 180</p>
+				</div>
+		</div>
+	</div>
+
+    <div class="container">
+		<div class="movie">
+			<img src="K.jpg">
+			<div class="details">
+				<h2>Kushi</h2>
+				<div class="showtime">
+					<p>Showtime:</p>
+					<p>8.30 AM, 12:00 PM</p>
+				</div>
+				<div class="price">
+					<p>Price:</p>
+					<p>Rs 180</p>
+				</div>
+		</div>
+	</div>
+
+	<script>
+		const input = document.getElementById('search');
+		const ul = document.getElementById('movies');
+		function searchMovies() {
+        const query = input.value.toLowerCase();
+		for (let i = 0; i < ul.children.length; i++) {
+			const li = ul.children[i];
+			const title = li.textContent.toLowerCase();
+			if (title.includes(query)) {
+				li.style.display = 'block';
+			} else {
+				li.style.display = 'none';
+			}
+		}
+	}
+	
+	const actionCheckbox = document.getElementById('action');
+	const comedyCheckbox = document.getElementById('comedy');
+	ul = document.getElementById('movies');
+	function filterMovies() {
+		const actionSelected = actionCheckbox.checked;
+     	const comedySelected = comedyCheckbox.checked;
+		for (let i = 0; i < ul.children.length; i++) {
+			const li = ul.children[i];
+			const genres = li.getAttribute('data-genres').split(' ');
+			if ((!actionSelected || genres.includes('action')) && 
+			(!comedySelected || genres.includes('comedy'))) {
+				li.style.display = 'block';
+			} else {
+				li.style.display = 'none';
+			}
+		}
+	}
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
